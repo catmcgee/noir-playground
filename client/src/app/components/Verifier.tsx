@@ -1,4 +1,4 @@
-import React from 'react'; // Make sure React is imported correctly
+import React from "react"; // Make sure React is imported correctly
 
 type VerifierProps = {
   toml: string;

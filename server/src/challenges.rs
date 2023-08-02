@@ -7,10 +7,11 @@ pub struct Challenge {
 }
 
 pub fn get_challenges() -> Arc<Vec<Challenge>> {
-    Arc::new(vec![
-        Challenge {
-            id: 1,
-            description: "<p style=\"font-size: 20px; font-weight:bold;\">Assert</p>
+    Arc::new(
+        vec![
+            Challenge {
+                id: 1,
+                description: "<p style=\"font-size: 20px; font-weight:bold;\">Assert</p>
 
             <p>Welcome to Noir Playground! In this first challenge, we will write a program that asserts that two integers are not equal.</p>
         
@@ -45,17 +46,17 @@ pub fn get_challenges() -> Arc<Vec<Challenge>> {
         
             <p style=\"font-size: 18px; font-weight:bold;\">Hint:</p>
             <p>If you're stuck, check out the Intro to Noir Syntax</p>".into(),
-            test_cases: vec![
-                "#[test]
-                fn test_main_fromserver() {
+                test_cases: vec![
+                    "#[test]
+                fn test_main() {
                     main(1,2);
                     main(0,5);
-                }".into(),
-            ],
-        },
-        Challenge {
-            id: 2,
-            description: " <p style=\"font-size: 20px; font-weight:bold;\">Functions and Variables</p>
+                }".into()
+                ],
+            },
+            Challenge {
+                id: 2,
+                description: "<p style=\"font-size: 20px; font-weight:bold;\">Functions and Variables</p>
             <p>This challenge is to create two functions: <code>main</code> and <code>add</code> in Noir lang. </p>
         
             <ul>
@@ -67,18 +68,18 @@ pub fn get_challenges() -> Arc<Vec<Challenge>> {
             <p style=\"font-size: 18px; font-weight:bold;\">Hint:</p>
             <p>Use <code>let</code> to declare variables.</p>
             <p>When you are happy with your code, click `Check` to get the prover inputs. Then fill them out and click the `Submit` button. Enjoy coding!</p>".into(),
-            test_cases: vec![
-                "#[test]
-                fn test_main_fromserver() {
+                test_cases: vec![
+                    "fn test_main() {
                     main(1, 2);
                     main(0,1);
                     add(1,2);
-                }".into(),
-            ],
-        },
-        Challenge {
-            id: 3,
-            description: "<p style=\"font-size: 20px; font-weight:bold;\">A Merkle Tree</p>
+                }
+                ".into()
+                ],
+            },
+            Challenge {
+                id: 3,
+                description: "<p style=\"font-size: 20px; font-weight:bold;\">A Merkle Tree</p>
             <p>
                is a data structure used to verify the integrity of data. Every piece of information, 
                or a leaf, is hashed. These hashes are then paired, hashed, paired again, and hashed again 
@@ -132,9 +133,9 @@ pub fn get_challenges() -> Arc<Vec<Challenge>> {
             </pre>
         
             <p>Good luck!</p>".into(),
-            test_cases: vec![
-                "#[test]
-                fn test_main_fromserver() {
+                test_cases: vec![
+                    "#[test]
+                fn test_main() {
                     let root = 0x29fd5ee89e33f559a7b32ac39f57400aa5a6c77492e28c088f9eb511b0c73e78; // Root from built Merkle Tree
                     let account_id = 1;
                     let index = 0;
@@ -145,12 +146,12 @@ pub fn get_challenges() -> Arc<Vec<Challenge>> {
                 
                 
                     let id_commitment = std::hash::pedersen([account_id])[0];
-                    std::println(id_commitment);
                     let computed_root = main(root, account_id, index, hash_path_1, hash_path_2, id_commitment); 
                 
                     assert(root == computed_root);
-                }".into(),
-            ],
-        },
-    ])
+                }".into()
+                ],
+            }
+        ]
+    )
 }

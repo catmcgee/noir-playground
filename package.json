@@ -1,0 +1,11 @@
+{
+    "name": "noir-playground",
+    "version": "0.1",
+    "description": "Noir Playground",
+    "main": "index.js",
+    "scripts": {
+      "client": "cd client && npm run dev",
+      "server": "cd server && cargo run"
+    }
+  }
+  
