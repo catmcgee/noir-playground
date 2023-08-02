@@ -1,0 +1,6 @@
+[package]
+name = "project"
+authors = [""]
+compiler_version = "0.9.0"
+
+[dependencies]

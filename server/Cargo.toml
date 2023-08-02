@@ -1,0 +1,18 @@
+[package]
+name = "server"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+serde = "1.0.104"
+serde_derive = "1.0.125"
+serde_json = "1.0.59"
+tokio = { version = "1.0", features = ["full"] }
+warp = "0.3.0"
+uuid = { version = "0.8.1", features = ["v4"] }
+toml = "0.5.8" 
+strip-ansi-escapes = "0.1.0"
+
+
